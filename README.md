@@ -126,14 +126,11 @@ Optional parameters:
    /api/workouts?phase=Ovulation
    /api/workouts?search=strength
 
-Part D – Possible Extensions
+-----------------------------------------------------------
+Live Application URL
 -----------------------------------------------------------
 
-- Pagination for /api/workouts
-- Additional filtering
-- API authentication
-- Improved UI design
-- Mobile app integration
+   http://www.doc.gold.ac.uk/usr/232/
 
 -----------------------------------------------------------
 Author
