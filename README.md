@@ -1,6 +1,3 @@
-#!/bin/bash
-
-cat << 'EOF' > README.md
 # GlowCycle
 
 A Node.js web application built using Express.js, EJS and MySQL2.
@@ -142,9 +139,6 @@ Part D – Possible Extensions
 Author
 -----------------------------------------------------------
 
-Student ID: [your ID here]
+Student ID: 33821542
 Module: Dynamic Web Applications
 Goldsmiths, University of London.
-EOF
-
-echo "README.md has been created successfully."
