@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Join GlowCycle</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="gc-header">
+    <div class="gc-logo">Glow<span>Cycle</span></div>
+    <nav class="gc-nav">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/search">Search</a>
+      <a href="/login">Login</a>
+      <a href="/register">Join</a>
+    </nav>
+  </header>
+
+  <main class="gc-main">
+    <section class="auth-page">
+      <div class="auth-card">
+        <div class="auth-heading">
+          <h1>Join GlowCycle 💗</h1>
+          <p>Create your own login or use gold / smiths to test.</p>
+        </div>
+
+        <% if (typeof error !== 'undefined' && error) { %>
+          <p class="error"><%= error %></p>
+        <% } %>
+
+        <form method="POST" class="auth-form">
+          <div class="field">
+            <label>Username</label>
+            <div class="field-input">
+              <span class="icon">✨</span>
+              <input type="text" name="username" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Email</label>
+            <div class="field-input">
+              <span class="icon">📧</span>
+              <input type="email" name="email" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Password</label>
+            <div class="field-input">
+              <span class="icon">🔒</span>
+              <input type="password" name="password" required />
+            </div>
+          </div>
+
+          <button class="btn-primary" type="submit">Create account</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="gc-footer">
+    <p>Designed for women’s health, energy &amp; rhythm 💗</p>
+  </footer>
+</body>
+</html>

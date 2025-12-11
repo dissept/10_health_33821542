@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Search workouts | GlowCycle</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="gc-header">
+    <div class="gc-logo">Glow<span>Cycle</span></div>
+    <nav class="gc-nav">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/search">Search</a>
+      <a href="/login">Login</a>
+      <a href="/register">Join</a>
+    </nav>
+  </header>
+
+  <main class="gc-main">
+    <section class="card">
+      <h1>Search cycle-based workouts</h1>
+
+      <form method="GET" class="form-grid" action="/search">
+        <div class="field">
+          <label>Search term</label>
+          <input
+            type="text"
+            name="q"
+            value="<%= term %>"
+            placeholder="e.g. ovulation, yoga, strength"
+          />
+        </div>
+        <button class="btn-primary" type="submit">Search</button>
+      </form>
+
+      <% if (term && term.trim() !== '') { %>
+        <h2 class="mt">Results for "<%= term %>"</h2>
+
+        <% if (results && results.length > 0) { %>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Workout</th>
+                <th>Phase</th>
+                <th>Intensity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% results.forEach(function(w) { %>
+                <tr>
+                  <td><%= w.name %></td>
+                  <td><%= w.phase %></td>
+                  <td><%= w.intensity %></td>
+                </tr>
+              <% }); %>
+            </tbody>
+          </table>
+        <% } else { %>
+          <p>No workouts found for that term.</p>
+        <% } %>
+      <% } %>
+    </section>
+  </main>
+
+  <footer class="gc-footer">
+    <p>Designed for women’s health, energy &amp; rhythm 💗</p>
+  </footer>
+</body>
+</html>

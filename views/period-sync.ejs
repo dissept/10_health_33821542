@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sync your cycle | GlowCycle</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="gc-header">
+    <div class="gc-logo">Glow<span>Cycle</span></div>
+    <nav class="gc-nav">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/search">Search</a>
+      <a href="/login">Login</a>
+      <a href="/register">Join</a>
+    </nav>
+  </header>
+
+  <main class="gc-main">
+    <section class="card">
+      <h1>Sync your period with your workout plan</h1>
+
+      <form method="POST" class="form-grid">
+        <div class="field">
+          <label>Last period start date</label>
+          <input type="date" name="lastPeriodDate" required />
+        </div>
+
+        <div class="field">
+          <label>Average cycle length (days)</label>
+          <input type="number" name="cycleLength" value="28" min="21" max="40" required />
+        </div>
+
+        <button class="btn-primary" type="submit">Calculate today’s phase</button>
+      </form>
+
+      <% if (result) { %>
+        <div class="result">
+          <h2>
+            Today is day <%= result.dayInCycle %> of your ~<%= result.cycleLength %>-day cycle
+          </h2>
+          <p class="phase-tag"><%= result.phase %> phase</p>
+
+          <h3>Suggested movement</h3>
+          <ul>
+            <% result.exercises.forEach(function(ex) { %>
+              <li><%= ex %></li>
+            <% }); %>
+          </ul>
+
+          <p class="note">
+            This demo is not medical advice. Always listen to your body. 💕
+          </p>
+        </div>
+      <% } %>
+    </section>
+  </main>
+
+  <footer class="gc-footer">
+    <p>Designed for women’s health, energy &amp; rhythm 💗</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title><%= title || 'GlowCycle' %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="gc-header">
+    <div class="gc-logo">Glow<span>Cycle</span></div>
+    <nav class="gc-nav">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/search">Search</a>
+      <% if (user) { %>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/period-sync">Sync cycle</a>
+        <a href="/logout">Logout (<%= user.username %>)</a>
+      <% } else { %>
+        <a href="/login">Login</a>
+        <a href="/register">Join</a>
+      <% } %>
+    </nav>
+  </header>
+
+  <main class="gc-main">
+    <%- body %>
+  </main>
+
+  <footer class="gc-footer">
+    <p>Designed for women’s health, energy & rhythm 💗</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "glowcycle",
+  "version": "1.0.0",
+  "description": "Women-focused health & fitness app with cycle-synced workouts",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.22.1",
+    "express-mysql-session": "^3.0.3",
+    "express-session": "^1.17.3",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.15.3"
+  }
+}

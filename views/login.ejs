@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login | GlowCycle</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="gc-header">
+    <div class="gc-logo">Glow<span>Cycle</span></div>
+    <nav class="gc-nav">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/search">Search</a>
+      <a href="/login">Login</a>
+      <a href="/register">Join</a>
+    </nav>
+  </header>
+
+  <main class="gc-main">
+    <section class="auth-page">
+      <div class="auth-card">
+        <div class="auth-heading">
+          <h1>Welcome back ✨</h1>
+          <p>Use <strong>gold / smiths</strong> to log in quickly.</p>
+        </div>
+
+        <% if (typeof error !== 'undefined' && error) { %>
+          <p class="error"><%= error %></p>
+        <% } %>
+
+        <form method="POST" class="auth-form">
+          <div class="field">
+            <label>Username</label>
+            <div class="field-input">
+              <span class="icon">👑</span>
+              <input type="text" name="username" placeholder="gold" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Password</label>
+            <div class="field-input">
+              <span class="icon">🔒</span>
+              <input type="password" name="password" placeholder="smiths" required />
+            </div>
+          </div>
+
+          <button class="btn-primary" type="submit">Login</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="gc-footer">
+    <p>Designed for women’s health, energy & rhythm 💗</p>
+  </footer>
+</body>
+</html>

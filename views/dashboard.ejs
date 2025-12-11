@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard | GlowCycle</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="gc-header">
+    <div class="gc-logo">Glow<span>Cycle</span></div>
+    <nav class="gc-nav">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/search">Search</a>
+      <a href="/period-sync">Sync cycle</a>
+      <a href="/logout">Logout</a>
+    </nav>
+  </header>
+
+  <main class="gc-main">
+    <section class="card">
+      <h1>Hello, <%= user.username %></h1>
+      <p>Here is your recent cycle log history.</p>
+
+      <a class="btn-primary" href="/period-sync">Log a new cycle entry</a>
+
+      <h2 class="mt">Recent entries</h2>
+
+      <% if (history && history.length > 0) { %>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Last period</th>
+              <th>Cycle length</th>
+              <th>Phase</th>
+              <th>Logged at</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% history.forEach(function(row) { %>
+              <tr>
+                <td><%= row.last_period.toISOString().slice(0, 10) %></td>
+                <td><%= row.cycle_length %> days</td>
+                <td><%= row.phase %></td>
+                <td><%= row.created_at.toISOString().slice(0, 16).replace('T', ' ') %></td>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      <% } else { %>
+        <p>No cycle entries yet. Log your first one!</p>
+      <% } %>
+    </section>
+  </main>
+
+  <footer class="gc-footer">
+    <p>Designed for women’s health, energy &amp; rhythm 💗</p>
+  </footer>
+</body>
+</html>
